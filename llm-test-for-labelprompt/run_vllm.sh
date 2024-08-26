@@ -1,0 +1,11 @@
+python -m vllm.entrypoints.openai.api_server \
+	--model="/hdd/zwj/models/meta-llama/Meta-Llama-3.1-8B-Instruct" \
+	--tensor-parallel-size 1 \
+	--trust-remote-code \
+	--device auto \
+	--gpu-memory-utilization 0.98 \
+	--dtype half \
+	--served-model-name "vllm" \
+	--host 0.0.0.0 \
+    --max-model-len 4096 \
+	--port 8080
